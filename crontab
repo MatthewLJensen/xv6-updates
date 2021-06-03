@@ -1,0 +1,20 @@
+# Note. Octothorp must be the first character of non-command lines. Otherwise it will not be interpreted as a comment.
+# All times are in UTC. Handling edge cases where UTC may be in an entirely different month would be a pain. For reference EST is 5 hours behind UTC.
+# Ranges of values can be indicated by using a dash. Step values and lists are not currently accepted.
+# There is no error checking to make sure your syntax is correct. This is something that needs to be added, but in the meantime, make sure you get it right.
+
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr, may, jun, jul, aug, sep, oct, nov, dec 
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0) OR sun,mon,tue,wed,thu,fri,sat (this row is currently not implemented, but it must be included)
+# |  |  |  |  |
+# *  *  *  *  * command to be executed
+
+
+* * * * * greet Everyone
+* * * * * echo this executes every minute
+20-40 * * * * echo this executes minute 10-20
+* 12 * * * echo this executes minute 25-35 during hour 4 UTC
